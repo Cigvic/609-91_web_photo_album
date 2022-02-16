@@ -1,4 +1,3 @@
 /vendor/
 /.env
-/.idea
-/.idea/609-91_web_photo_album.iml
+.idea

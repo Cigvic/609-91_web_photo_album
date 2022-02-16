@@ -1,11 +1,6 @@
 <?php
-try {
-    $conn = new PDO("mysql:host=$_ENV[servername];dbname=$_ENV[database]", $_ENV['username'], $_ENV['password']);
-    // set the PDO error mode to exception
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
-}
+
+require "dbconnect.php";
 
 try {
     $sql = 'INSERT INTO category(name) values (:name)';
