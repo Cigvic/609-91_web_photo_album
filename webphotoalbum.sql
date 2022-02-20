@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 20 2022 г., 17:08
+-- Время создания: Фев 20 2022 г., 22:45
 -- Версия сервера: 8.0.24
 -- Версия PHP: 7.4.27
 
@@ -45,7 +45,9 @@ CREATE TABLE `photos` (
   `name` varchar(500) NOT NULL,
   `description` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `createdDate` date NOT NULL,
-  `folderId` int UNSIGNED NOT NULL
+  `folderId` int UNSIGNED NOT NULL,
+  `tags` varchar(1024) DEFAULT NULL COMMENT 'Теги для поиска',
+  `path` varchar(512) NOT NULL COMMENT 'Путь/ссылка'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='В этой таблице хранятся фото пользователей, которые привязаны к определённым папкам';
 
 -- --------------------------------------------------------
