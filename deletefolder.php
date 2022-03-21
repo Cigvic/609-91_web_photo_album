@@ -1,18 +1,18 @@
 <?php
     require "dbconnect.php";
     try {
-        $sql = 'DELETE FROM photos WHERE photoId=:id';
+        $sql = 'DELETE FROM folder WHERE folderId=:id';
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':id', $_GET['id']);
         $stmt->execute();
-        $_SESSION['msg'] = "Фото успешно удалено";
+        $_SESSION['msg'] = "Папка успешно удалена";
         // return generated id
         // $id = $pdo->lastInsertId('id');
     } catch (PDOexception $error) {
-        $_SESSION['msg'] = "Ошибка удаления фото: " . $error->getMessage();
+        $_SESSION['msg'] = "Ошибка удаления папки: " . $error->getMessage();
     }
     // перенаправление на главную страницу приложения
-    header('Location: http://webphotoalbum/photos.php?id='.$_GET['folderId']);
+    header('Location: http://webphotoalbum/index.php?page=c');
     exit( );
 
 
