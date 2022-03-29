@@ -1,10 +1,19 @@
-<h1>Фото:</h1>
-<table border='1'>
+<div class="container" >
+<h1 style="margin-top: 70px">Фото:</h1>
+<div >
+    <table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Имя</th>
+        <th scope="col">Действие</th>
+    </tr>
+    </thead>
 <?php
 require "dbconnect.php";
 $result = $conn->query("SELECT userId FROM folder WHERE folderId=".$_GET['id']);
 $row = $result->fetch();
-if ($row['userId']==$_GET['id'])
+if ($row['userId']==$_SESSION['userId'])
 {
     $result = $conn->query("SELECT * FROM photos WHERE folderId=".$_GET['id']);
     while ($row = $result->fetch()) {
@@ -15,12 +24,16 @@ if ($row['userId']==$_GET['id'])
     }
 
     echo '</table>
+</div>
+    <div >
 <h2>Добавление фото</h2>
-<form method="get" action="insertphoto.php">
-    <input type="text" name="name">';
+<form method="get" action="insertphoto.php" >
+    <input style="width: 20%; margin-bottom: 15px; margin-top: 15px" type="text" name="name" class="form-control">';
     echo '<input type="hidden" value='.$_GET['id'].' name="folderId"</input>';
-    echo '<input type="submit" value="Создать">
-</form>';
+    echo '<input class="btn btn-primary" type="submit" value="Создать">
+</form>
+    </div>
+</div>';
 }
 else
 {

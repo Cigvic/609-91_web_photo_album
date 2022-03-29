@@ -12,7 +12,7 @@
         $_SESSION['msg'] = "Ошибка удаления фото: " . $error->getMessage();
     }
     // перенаправление на главную страницу приложения
-    header('Location: http://webphotoalbum/photos.php?id='.$_GET['folderId']);
+    header('Location: http://webphotoalbum/index.php?page=t&id='.$_GET['folderId']);
     exit( );
 
 
