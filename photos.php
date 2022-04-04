@@ -6,6 +6,7 @@
     <tr>
         <th scope="col">#</th>
         <th scope="col">Имя</th>
+        <th scope="col">Фото</th>
         <th scope="col">Действие</th>
     </tr>
     </thead>
@@ -18,7 +19,7 @@ if ($row['userId']==$_SESSION['userId'])
     $result = $conn->query("SELECT * FROM photos WHERE folderId=".$_GET['id']);
     while ($row = $result->fetch()) {
         echo '<tr>';
-        echo '<td>' . $row['photoId'] . '</td><td>' . $row['name'] . '</td>';
+        echo '<td>' . $row['photoId'] . '</td><td>' . $row['name'] . '</td><td><img style="width: 160;height: 90" src="'.$row['path'].'" alt="Нет картинки"></td>' ;
         echo '<td><a href=deletephoto.php?id='.$row['photoId'].'&folderId='.$_GET['id'].'>Удалить</a></td>';
         echo '</tr>';
     }
@@ -27,11 +28,12 @@ if ($row['userId']==$_SESSION['userId'])
 </div>
     <div >
 <h2>Добавление фото</h2>
-<form method="get" action="insertphoto.php" >
+<form method="post" action="insertphoto.php" enctype="multipart/form-data">
     <input style="width: 20%; margin-bottom: 15px; margin-top: 15px" type="text" name="name" class="form-control">';
     echo '<input type="hidden" value='.$_GET['id'].' name="folderId"</input>';
-    echo '<input class="btn btn-primary" type="submit" value="Создать">
-</form>
+    echo '<input type="file" name="filename">';
+    echo '<input class="btn btn-primary" type="submit" value="Создать">';
+'</form>
     </div>
 </div>';
 }
