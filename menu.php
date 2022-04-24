@@ -31,6 +31,7 @@
                     echo '<input class="form-control me-2" type="text" placeholder="Логин" name="login" aria-label="Логин"/>';
                     echo '<input class="form-control me-2" type="password" placeholder="Пароль" name="password" aria-label="Пароль"/>';
                     echo '<button class="btn btn-outline-success" type="submit">Войти</button>';
+                    echo ' <a class="nav-link" href="index.php?page=reg">Регистрация</a>';
 
                     echo '</form>';
                 }

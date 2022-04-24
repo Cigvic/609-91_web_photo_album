@@ -18,6 +18,11 @@ switch ($_GET['page']){
             echo 'Войдите в сиситему для просмотра фото';
         }
         break;
+    case 'reg':
+        if (!isset($_SESSION['login'])){
+            require "registration.php";
+        }
+        break;
 }
 
 require "message.php";
