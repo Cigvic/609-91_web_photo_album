@@ -1,6 +1,5 @@
 <?php
 //   $err_msg = '';
-    $conn = 1;
     if (isset($_POST["login"]) and $_POST["login"]!='')
     {
         try {
