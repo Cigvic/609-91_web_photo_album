@@ -1,5 +1,14 @@
 <?php
 require "dbconnect.php";
+$result = $conn->query("SELECT * FROM user");
+while ($row = $result->fetch()) {
+    if ($row['login']===$_POST['login'])
+    { $_SESSION['msg'] = "Логин занят ";
+        header("Location: ".$_SERVER['HTTP_REFERER']);
+        exit( );}
+
+
+}
 if ($_POST['password']==$_POST['repPassword'])
 {
 try {
@@ -20,9 +29,9 @@ try {
 
 } catch (PDOexception $error) {
     $_SESSION['msg'] = "Пароли не совпадают: " . $error->getMessage();
-    header('Location: http://webphotoalbum/index.php?page=c');
+    header("Location: ".$_SERVER['HTTP_REFERER']);
 }
-
+    header("Location: ".$_SERVER['HTTP_REFERER']);
     exit( );
 }
 else {
