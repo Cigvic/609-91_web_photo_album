@@ -1,0 +1,11 @@
+.folder__trash-btn {
+  width: 50px;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  transition: opacity .4s, fill .4s;
+  cursor: pointer;
+}
+.folder__trash-btn:hover {
+  fill: red;
+  opacity: .6;
+}

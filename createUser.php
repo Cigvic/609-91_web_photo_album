@@ -20,15 +20,14 @@ try {
 
 } catch (PDOexception $error) {
     $_SESSION['msg'] = "Пароли не совпадают: " . $error->getMessage();
-    header('index.php?page=c');
+    header('Location: http://webphotoalbum/index.php?page=c');
 }
-    header('index.php?page=c');
-    exit( );
 
+    exit( );
 }
 else {
     $_SESSION['msg'] = "Пароли не совпадают ";
-    header("Location: ".$_SERVER['HTTP_REFERER']);
+    header('Location: http://webphotoalbum/index.php?page=reg');
     exit( );
 }
 // перенаправление на главную страницу приложения

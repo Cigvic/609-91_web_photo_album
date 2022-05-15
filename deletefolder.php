@@ -12,7 +12,7 @@
         $_SESSION['msg'] = "Ошибка удаления папки: " . $error->getMessage();
     }
     // перенаправление на главную страницу приложения
-    header("Location: ".$_SERVER['HTTP_REFERER']);
+    header('Location: http://webphotoalbum/index.php?page=c');
     exit( );
 
 

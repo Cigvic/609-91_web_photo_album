@@ -36,7 +36,7 @@
 
 
 
-    header("Location: ".$_SERVER['HTTP_REFERER']);
+    header('Location: http://webphotoalbum/index.php?page=t&id='.$_GET['folderId']);
     exit( );
 
 

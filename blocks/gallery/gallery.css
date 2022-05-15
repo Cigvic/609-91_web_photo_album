@@ -1,0 +1,9 @@
+.gallery {
+  order: -1;
+  display: grid;
+  align-items: start;
+  width: 70%;
+  grid-template-columns: repeat(auto-fit, 282px);
+  row-gap: 20px;
+  column-gap: 17px;
+}

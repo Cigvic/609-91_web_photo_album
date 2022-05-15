@@ -1,0 +1,16 @@
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__form/header__form.css);
+@import url(./blocks/content/content.css);
+@import url(./blocks/flex-container/flex-container.css);
+@import url(./blocks/gallery/gallery.css);
+@import url(./blocks/add-folder-form/add-folder-form.css);
+@import url(./blocks/folder/folder.css);
+@import url(./blocks/folder/__image/folder__image.css);
+@import url(./blocks/folder/__link/folder__link.css);
+@import url(./blocks/folder/__title/folder__title.css);
+@import url(./blocks/folder/__trash-btn/folder__trash-btn.css);
+@import url(./blocks/photo-card/photo-card.css);
+@import url(./blocks/photo-card/__image/photo-card__image.css);
+@import url(./blocks/photo-card/__title/photo-card__title.css);
+@import url(./blocks/photo-card/__trash-btn/photo-card__trash-btn.css);
+@import url(./blocks/footer/footer.css);

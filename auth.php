@@ -1,5 +1,6 @@
 <?php
 //   $err_msg = '';
+
     if (isset($_POST["login"]) and $_POST["login"]!='')
     {
         try {
@@ -25,7 +26,6 @@
                 $_SESSION['lastname'] = $row['lastname'];
                 $_SESSION['userId'] = $row['userId'];
                 //if ($row['is_teacher']==1) $_SESSION['teacher'] = true;
-                $msg =  "Вы успешно вошли в систему";
                 }
         }
         else $msg =  "Неправильное имя пользователя!";
@@ -35,7 +35,6 @@
     if (isset($_GET["logout"]))
     {
         session_unset();
-        $_SESSION['msg'] =  "Вы успешно вышли из системы";
         header('Location: http://webphotoalbum');
         exit( );
     }

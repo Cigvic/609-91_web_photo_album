@@ -1,0 +1,7 @@
+.flex-container {
+  display: flex;
+}
+
+.flex-container_jc-sb {
+  justify-content: space-between;
+}
