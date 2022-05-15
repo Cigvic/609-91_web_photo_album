@@ -14,5 +14,5 @@
         $_SESSION['msg'] = "Ошибка добавления папки: " . $error->getMessage();
     }
     // перенаправление на главную страницу приложения
-    header('Location: http://webphotoalbum/index.php?page=c');
+    header("Location: ".$_SERVER['HTTP_REFERER']);
     exit( );

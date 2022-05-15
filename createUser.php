@@ -27,7 +27,7 @@ try {
 }
 else {
     $_SESSION['msg'] = "Пароли не совпадают ";
-    header('Location: http://webphotoalbum/index.php?page=reg');
+    header("Location: ".$_SERVER['HTTP_REFERER']);
     exit( );
 }
 // перенаправление на главную страницу приложения
