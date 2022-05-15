@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Фев 20 2022 г., 22:45
+-- Время создания: Май 15 2022 г., 13:46
 -- Версия сервера: 8.0.24
 -- Версия PHP: 7.4.27
 
@@ -34,6 +34,18 @@ CREATE TABLE `folder` (
   `createdDate` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='В этой таблице хранятся папки пользователей';
 
+--
+-- Дамп данных таблицы `folder`
+--
+
+INSERT INTO `folder` (`folderId`, `name`, `userId`, `createdDate`) VALUES
+(1, 'Photos', 1, '2022-03-16'),
+(3, '456', 2, '2022-03-21'),
+(4, '2 пользователь', 2, '2022-03-21'),
+(5, 'Пользователь 1', 1, '2022-03-21'),
+(8, 'abbous', 1, '2022-03-28'),
+(9, '1223', 3, '2022-05-15');
+
 -- --------------------------------------------------------
 
 --
@@ -50,6 +62,21 @@ CREATE TABLE `photos` (
   `path` varchar(512) NOT NULL COMMENT 'Путь/ссылка'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='В этой таблице хранятся фото пользователей, которые привязаны к определённым папкам';
 
+--
+-- Дамп данных таблицы `photos`
+--
+
+INSERT INTO `photos` (`photoId`, `name`, `description`, `createdDate`, `folderId`, `tags`, `path`) VALUES
+(9, 'abobus', '123', '2022-03-21', 3, NULL, '/asdsa'),
+(12, 'amogus', '123', '2022-03-21', 4, NULL, '/asdsa'),
+(13, 'oshihiteo', '123', '2022-03-21', 3, NULL, '/asdsa'),
+(14, 'asd', '123', '2022-03-21', 5, NULL, '/asdsa'),
+(18, 'fdgfg', '123', '2022-03-29', 1, NULL, '/asdsa'),
+(19, 'asdasd', '123', '2022-03-29', 1, NULL, '/asdsa'),
+(21, 'asdsa', '123', '2022-04-03', 1, NULL, '/asdsa'),
+(25, 'Английский', '123', '2022-04-18', 1, NULL, 'https://s3.everlearn.ru/surgu/student/file490736.jpg'),
+(26, 'abobous', '123', '2022-05-15', 9, NULL, 'https://s3.everlearn.ru/surgu/student/file169912.jpg');
+
 -- --------------------------------------------------------
 
 --
@@ -64,6 +91,15 @@ CREATE TABLE `user` (
   `md5password` varchar(255) NOT NULL,
   `isAdmin` int UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Является админом'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='Здесь хранятся пользователи';
+
+--
+-- Дамп данных таблицы `user`
+--
+
+INSERT INTO `user` (`userId`, `firstname`, `lastname`, `login`, `md5password`, `isAdmin`) VALUES
+(1, 'Ilya', 'Tsigvintsev', 'abobus', '202cb962ac59075b964b07152d234b70', 1),
+(2, 'Yaz', 'Zdorovenii', 'abobus1', '202cb962ac59075b964b07152d234b70', 0),
+(3, 'Giga', 'Chad', 'Test00', 'c4ca4238a0b923820dcc509a6f75849b', 0);
 
 --
 -- Индексы сохранённых таблиц
@@ -97,19 +133,19 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для таблицы `folder`
 --
 ALTER TABLE `folder`
-  MODIFY `folderId` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `folderId` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT для таблицы `photos`
 --
 ALTER TABLE `photos`
-  MODIFY `photoId` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `photoId` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `userId` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID пользователя';
+  MODIFY `userId` int UNSIGNED NOT NULL AUTO_INCREMENT COMMENT 'ID пользователя', AUTO_INCREMENT=4;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
