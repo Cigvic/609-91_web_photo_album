@@ -30,5 +30,5 @@
         $_SESSION['msg'] = "Ошибка добавления фото: " . $error->getMessage();
     }
     // перенаправление на главную страницу приложения
-    header('Location: http://webphotoalbum/index.php?page=t&id='.$_POST['folderId']);
+    header("Location: ".$_SERVER['HTTP_REFERER']);
     exit( );
