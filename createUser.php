@@ -22,8 +22,9 @@ try {
     $_SESSION['msg'] = "Пароли не совпадают: " . $error->getMessage();
     header('Location: http://webphotoalbum/index.php?page=c');
 }
-
+    header('Location: http://webphotoalbum/index.php?page=c');
     exit( );
+
 }
 else {
     $_SESSION['msg'] = "Пароли не совпадают ";
