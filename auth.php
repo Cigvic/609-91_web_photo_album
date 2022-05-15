@@ -35,7 +35,7 @@
     if (isset($_GET["logout"]))
     {
         session_unset();
-        header('Location: http://webphotoalbum');
+        header("Location: ".$_SERVER['HTTP_REFERER']);
         exit( );
     }
 
